@@ -29,7 +29,7 @@
                 android:id="@+id/RegistroUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="REGISTRAR USUARIO"
+                android:text="@string/registro_usuario"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -46,16 +46,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="25dp"
-                    android:text="Identificación: " />
+                    android:text="@string/identificacion" />
 
                 <EditText
                     android:id="@+id/editTextIdent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Identificación"
-                    android:inputType="number" />
+                    android:hint="@string/hintidentificacion"
+                    android:inputType="number"
+                    android:autofillHints="Identificacion"/>
             </LinearLayout>
 
             <LinearLayout
@@ -68,16 +69,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Nombre:" />
+                    android:text="@string/nombre" />
 
                 <EditText
                     android:id="@+id/editTextNombre"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Nombre"
-                    android:inputType="text" />
+                    android:hint="@string/hintnombre"
+                    android:inputType="text"
+                    android:autofillHints="Nombre"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -89,16 +91,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Apellido:" />
+                    android:text="@string/apellido" />
 
                 <EditText
                     android:id="@+id/editTextApellido"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Apellido"
-                    android:inputType="text" />
+                    android:hint="@string/hintapellido"
+                    android:inputType="text"
+                    android:autofillHints="Apellido"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,16 +113,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="70dp"
-                    android:text="Correo:" />
+                    android:text="@string/correo" />
 
                 <EditText
                     android:id="@+id/editTextCorreo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Correo"
-                    android:inputType="textEmailAddress" />
+                    android:hint="@string/hintcorreo"
+                    android:inputType="textEmailAddress"
+                    android:autofillHints="Correo electrónico"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,16 +135,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="64dp"
-                    android:text="Usuario:" />
+                    android:text="@string/usuario" />
 
                 <EditText
                     android:id="@+id/editTextUsuario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Usuario"
-                    android:inputType="text" />
+                    android:hint="@string/hintusuario"
+                    android:inputType="text"
+                    android:autofillHints="Nombre de usuario"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -152,25 +157,43 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="40dp"
-                    android:text="Contraseña:" />
+                    android:text="@string/contraseña" />
 
                 <EditText
                     android:id="@+id/editTextContraseña"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="Contraseña"
-                    android:inputType="textPassword" />
+                    android:hint="@string/hintcontraseña"
+                    android:inputType="textPassword"
+                    android:autofillHints="Contraseña"/>
             </LinearLayout>
 
         </LinearLayout>
 
         <Button
             android:id="@+id/btnRegistrar"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/registrar" />
+
+        <TextView
+            android:id="@+id/textYaHayCuenta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="REGISTRARSE"
-            android:layout_marginTop="20dp"/>
+            android:text="@string/ya_hay_cuenta"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/iniciar_sesion" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

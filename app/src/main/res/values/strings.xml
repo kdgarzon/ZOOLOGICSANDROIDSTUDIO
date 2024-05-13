@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">ZOOLOGICSAPP</string>
+
+    //SUBTITULOS DE CAMPOS DE TEXTO
+
+    <string name="registro_usuario">REGISTRAR USUARIO</string>
+    <string name="identificacion">Identificación:</string>
+    <string name="nombre">Nombre:</string>
+    <string name="apellido">Apellido:</string>
+    <string name="correo">Correo:</string>
+    <string name="usuario">Usuario:</string>
+    <string name="contraseña">Contraseña:</string>
+    <string name="registrar">REGISTRARSE</string>
+    <string name="ya_hay_cuenta">¿Ya tienes una cuenta?</string>
+    <string name="iniciar_sesion">INICIAR SESIÓN</string>
+
+    //HINTS CAMPOS DE TEXTO EDITABLES
+
+    <string name="hintidentificacion">Identificación</string>
+    <string name="hintnombre">Nombre</string>
+    <string name="hintapellido">Apellido</string>
+    <string name="hintcorreo">Correo</string>
+    <string name="hintusuario">Usuario</string>
+    <string name="hintcontraseña">Contraseña</string>
 </resources>
