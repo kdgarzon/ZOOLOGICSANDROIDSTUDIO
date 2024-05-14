@@ -56,10 +56,14 @@ class RegistroActivity : AppCompatActivity() {
 
             //Se comprueba que los datos no esten vacios
             if (identUser.isEmpty() && nomUser.isEmpty() && apellUser.isEmpty() && correoUser.isEmpty() && userUser.isEmpty() && passUser.isEmpty()){
-                Toast.makeText(this, "Por favor, complete los campos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@RegistroActivity, "Por favor, complete los campos", Toast.LENGTH_SHORT).show()
             }else{
                 registrar(identUser, nomUser, apellUser, correoUser, userUser, passUser)
             }
+        }
+
+        btnIniciar.setOnClickListener{
+            iniciarSesion()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -69,8 +73,10 @@ class RegistroActivity : AppCompatActivity() {
         }
     }
 
-
-
+    private fun iniciarSesion() {
+        startActivity(Intent(this@RegistroActivity, LoginActivity::class.java))
+        finish()
+    }
 
 
     //METODO PARA REGISTRAR USUARIOS

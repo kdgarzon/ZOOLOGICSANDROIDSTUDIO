@@ -22,4 +22,18 @@
     <string name="hintcorreo">Correo</string>
     <string name="hintusuario">Usuario</string>
     <string name="hintcontraseña">Contraseña</string>
+
+
+    //CAMPOS DE TEXTO VENTANA DE LOGIN
+
+    <string name="logininiciar_sesion">INICIAR SESIÓN</string>
+    <string name="subtitulo_correo">Digite su correo electrónico:</string>
+    <string name="subtitulo_contrasena">Digite su contraseña:</string>
+    <string name="btn_iniciar_sesion">INICIAR SESIÓN</string>
+    <string name="no_tener_cuenta">¿Aún no tienes cuenta?</string>
+    <string name="btn_registrarse">REGISTRARSE</string>
+
+    //BOTON CERRAR SESION
+
+    <string name="btnCerrar">CERRAR SESION</string>
 </resources>
