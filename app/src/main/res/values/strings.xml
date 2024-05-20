@@ -33,7 +33,20 @@
     <string name="no_tener_cuenta">¿Aún no tienes cuenta?</string>
     <string name="btn_registrarse">REGISTRARSE</string>
 
-    //BOTON CERRAR SESION
+    //BOTONES
 
     <string name="btnCerrar">CERRAR SESION</string>
+    <string name="btnCrear">CREAR USUARIO</string>
+    <string name="btnInsertarUsuario">INSERTAR</string>
+
+    //TITULOS PESTAÑAS
+
+    <string name="titCrearUsuario">CREAR USUARIO</string>
+    <string name="subInformacion">Información General</string>
+
+    //LISTAS DESPLEGABLES
+
+    <string name="context">Select Item..</string>
+    <string name="description_autocomplete">Lista de roles</string>
+
 </resources>

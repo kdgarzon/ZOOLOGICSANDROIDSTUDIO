@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,12 +30,11 @@
                 android:id="@+id/RegistroUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
                 android:text="@string/registro_usuario"
                 android:textAlignment="center"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="30dp"
-                />
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -53,10 +53,10 @@
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints="Identificacion"
                     android:ems="10"
                     android:hint="@string/hintidentificacion"
-                    android:inputType="number"
-                    android:autofillHints="Identificacion"/>
+                    android:inputType="number" />
             </LinearLayout>
 
             <LinearLayout
@@ -76,11 +76,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints="Nombre"
                     android:ems="10"
                     android:hint="@string/hintnombre"
-                    android:inputType="text"
-                    android:autofillHints="Nombre"/>
+                    android:inputType="text" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -98,11 +99,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints="Apellido"
                     android:ems="10"
                     android:hint="@string/hintapellido"
-                    android:inputType="text"
-                    android:autofillHints="Apellido"/>
+                    android:inputType="text" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -120,11 +122,12 @@
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints="Correo electrónico"
                     android:ems="10"
                     android:hint="@string/hintcorreo"
-                    android:inputType="textEmailAddress"
-                    android:autofillHints="Correo electrónico"/>
+                    android:inputType="textEmailAddress" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -142,11 +145,12 @@
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints="Nombre de usuario"
                     android:ems="10"
                     android:hint="@string/hintusuario"
-                    android:inputType="text"
-                    android:autofillHints="Nombre de usuario"/>
+                    android:inputType="text" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -164,10 +168,10 @@
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints="Contraseña"
                     android:ems="10"
                     android:hint="@string/hintcontraseña"
-                    android:inputType="textPassword"
-                    android:autofillHints="Contraseña"/>
+                    android:inputType="textPassword" />
             </LinearLayout>
 
         </LinearLayout>
@@ -176,18 +180,18 @@
             android:id="@+id/btnRegistrar"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
             android:text="@string/registrar" />
 
         <TextView
             android:id="@+id/textYaHayCuenta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ya_hay_cuenta"
-            android:textAlignment="center"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="@string/ya_hay_cuenta"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/btnIngresar"

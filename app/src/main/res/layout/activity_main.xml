@@ -19,6 +19,13 @@
             android:text="@string/btnCerrar"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/btnAuxCrearUsuario"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:text="@string/btnCrear"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

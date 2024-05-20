@@ -14,6 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnCerrar: Button
+    private lateinit var btnCrear: Button
     private lateinit var mFirestore: FirebaseFirestore
     private lateinit var mAuth: FirebaseAuth
 
@@ -28,9 +29,14 @@ class MainActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         btnCerrar = findViewById(R.id.btnCerrarSesion)
+        btnCrear = findViewById(R.id.btnAuxCrearUsuario)
 
         btnCerrar.setOnClickListener{
             cerrar()
+        }
+
+        btnCrear.setOnClickListener{
+            redirigir()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -38,6 +44,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    private fun redirigir() {
+        finish()
+        startActivity(Intent(this@MainActivity, CrearUsuario::class.java))
     }
 
     private fun cerrar() {
