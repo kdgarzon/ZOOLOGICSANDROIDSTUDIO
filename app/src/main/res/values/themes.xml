@@ -2,8 +2,20 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ZOOLOGICSAPP" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/azul_uno</item>
+        <item name="colorPrimaryVariant">@color/azul_tres</item>
+        <item name="android:statusBarColor">@color/azul_cinco</item>
+
     </style>
 
     <style name="Theme.ZOOLOGICSAPP" parent="Base.Theme.ZOOLOGICSAPP" />
+
+    <style name="Theme.ZOOLOGICSAPP.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ZOOLOGICSAPP.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ZOOLOGICSAPP.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

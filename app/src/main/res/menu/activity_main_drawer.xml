@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/baseline_home_24"
+            android:title="@string/textInicio"/>
+
+        <item
+            android:id="@+id/nav_infoZoo"
+            android:icon="@drawable/baseline_info_24"
+            android:title="@string/textInfo"/>
+
+        <item
+            android:id="@+id/nav_zoologico"
+            android:icon="@drawable/baseline_zoo_24"
+            android:title="@string/textZoo"/>
+
+        <item
+            android:id="@+id/nav_animaleszoo"
+            android:icon="@drawable/baseline_animales_24"
+            android:title="@string/textAnimal"/>
+
+        <item
+            android:id="@+id/nav_especieszoo"
+            android:icon="@drawable/baseline_especies_chart_24"
+            android:title="@string/textEspecie"/>
+
+        <item
+            android:id="@+id/nav_familiaszoo"
+            android:icon="@drawable/baseline_familias_24"
+            android:title="@string/textFam"/>
+
+    </group>
+</menu>

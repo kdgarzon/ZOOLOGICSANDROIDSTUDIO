@@ -2,4 +2,29 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    //PALETA DE COLORES AZULES
+
+    <color name="azul_uno">#aeeaff</color>
+    <color name="azul_dos">#8ed2fc</color>
+    <color name="azul_tres">#6ebaf9</color>
+    <color name="azul_cuatro">#4ea1f6</color>
+    <color name="azul_cinco">#2e89f3</color>
+
+    //PALETA DE COLORES VERDE MANZANA
+
+    <color name="manzana_uno">#91f5c6</color>
+    <color name="manzana_dos">#77dcae</color>
+    <color name="manzana_tres">#5dc397</color>
+    <color name="manzana_cuatro">#42aa7f</color>
+    <color name="manzana_cinco">#289167</color>
+
+    //PALETA DE COLORES VERDE
+
+    <color name="verde_uno">#acf777</color>
+    <color name="verde_dos">#93de5e</color>
+    <color name="verde_tres">#7ac545</color>
+    <color name="verde_cuatro">#60ac2b</color>
+    <color name="verde_cinco">#479312</color>
+
 </resources>

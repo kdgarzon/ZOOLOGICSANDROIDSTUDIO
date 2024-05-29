@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/nav_home_usuario">
+
+    <fragment
+        android:id="@+id/nav_home_usuario"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.HomeUsuario"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home_usuario" />
+
+    <fragment
+        android:id="@+id/nav_zooSanDiego"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooSanDiego"
+        android:label="@string/textZooSanDiego"
+        tools:layout="@layout/fragment_zoo_san_diego" />
+
+    <fragment
+        android:id="@+id/nav_zooSingapur"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooSingapur"
+        android:label="@string/textZooSingapur"
+        tools:layout="@layout/fragment_zoo_singapur" />
+
+    <fragment
+        android:id="@+id/nav_zooToronto"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooToronto"
+        android:label="@string/textZooToronto"
+        tools:layout="@layout/fragment_zoo_toronto" />
+
+    <fragment
+        android:id="@+id/nav_zooLoroParque"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooLoroParque"
+        android:label="@string/textZooLoroParque"
+        tools:layout="@layout/fragment_zoo_loro_parque" />
+
+    <fragment
+        android:id="@+id/nav_zooSchonbrunn"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooSchonbrunn"
+        android:label="@string/textZooSchonbrunn"
+        tools:layout="@layout/fragment_zoo_schonbrunn" />
+
+    <fragment
+        android:id="@+id/nav_zooLondres"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooLondres"
+        android:label="@string/textZooLondres"
+        tools:layout="@layout/fragment_zoo_londres" />
+
+    <fragment
+        android:id="@+id/nav_zooBerlin"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooBerlin"
+        android:label="@string/textZooBerlin"
+        tools:layout="@layout/fragment_zoo_berlin" />
+
+    <fragment
+        android:id="@+id/nav_zooBronx"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooBronx"
+        android:label="@string/textZooBronx"
+        tools:layout="@layout/fragment_zoo_bronx" />
+
+    <fragment
+        android:id="@+id/nav_zooChapultepec"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.ZooChapultepec"
+        android:label="@string/textZooChapultepec"
+        tools:layout="@layout/fragment_zoo_chapultepec" />
+
+    <fragment
+        android:id="@+id/nav_acuarioTwoOceans"
+        android:name="com.dev.zoologicsapp.ui.VistaUsuario.AcuarioTwoOceans"
+        android:label="@string/textAcuario"
+        tools:layout="@layout/fragment_acuario_two_oceans" />
+
+</navigation>

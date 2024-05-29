@@ -43,10 +43,59 @@
 
     <string name="titCrearUsuario">CREAR USUARIO</string>
     <string name="subInformacion">Información General</string>
+    <string name="adm">PANEL ADMINISTRADOR</string>
+    <string name="usu">PANEL DE USUARIO</string>
+    <string name="zoo">PANEL DE ZOOLOGICO</string>
 
     //LISTAS DESPLEGABLES
 
     <string name="context">Select Item..</string>
     <string name="description_autocomplete">Lista de roles</string>
+
+    //BARRA DE NAVEGACION
+
+    <string name="openNav">Open Navegation</string>
+    <string name="closeNav">Close Navegation</string>
+    <string name="textInicio">Inicio</string>
+    <string name="textInfo">Información</string>
+    <string name="textZoo">Zoológico</string>
+    <string name="textAnimal">Animales</string>
+    <string name="textEspecie">Especies</string>
+    <string name="textFam">Familias</string>
+    <string name="textSalir">Salir</string>
+    <string name="textZoologics">ZOOLOGICS</string>
+    <string name="textNomZoo">Nombre del zoológico</string>
+
+    //BARRA DE NAVEGACION DE USUARIO
+
+    <string name="textPagPrincipal">Página Principal</string>
+    <string name="textZooSanDiego">Zoológico de San Diego</string>
+    <string name="textZooSingapur">Zoológico de Singapur</string>
+    <string name="textZooToronto">Zoológico de Toronto</string>
+    <string name="textZooLoroParque">Zoológico Loro Parque</string>
+    <string name="textZooSchonbrunn">Zoológico de Schonbrunn</string>
+    <string name="textZooLondres">Zoológico de Londres</string>
+    <string name="textZooBerlin">Zoológico de Berlín</string>
+    <string name="textZooBronx">Zoológico del Bronx</string>
+    <string name="textZooChapultepec">Zoológico de Chapultepec</string>
+    <string name="textAcuario">Acuario Two Oceans</string>
+    <string name="textSepAcuario">ACUARIOS</string>
+    <string name="textSepZoo">ZOOLOGICOS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">HOME DEL ZOOLOGICO</string>
+    <string name="title_activity_panel_zoo">PanelZoo</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_panel_usuario">PanelUsuario</string>
+
 
 </resources>

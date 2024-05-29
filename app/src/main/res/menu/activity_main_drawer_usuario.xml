@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home_usuario"
+            android:icon="@drawable/baseline_home_24"
+            android:title="@string/textPagPrincipal"/>
+
+    </group>
+    <item android:title="@string/textSepZoo">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_zooSanDiego"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooSanDiego"/>
+
+                <item
+                    android:id="@+id/nav_zooSingapur"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooSingapur"/>
+
+                <item
+                    android:id="@+id/nav_zooToronto"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooToronto"/>
+
+                <item
+                    android:id="@+id/nav_zooLoroParque"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooLoroParque"/>
+
+                <item
+                    android:id="@+id/nav_zooSchonbrunn"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooSchonbrunn"/>
+
+                <item
+                    android:id="@+id/nav_zooLondres"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooLondres"/>
+
+                <item
+                    android:id="@+id/nav_zooBerlin"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooBerlin"/>
+
+                <item
+                    android:id="@+id/nav_zooBronx"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooBronx"/>
+
+                <item
+                    android:id="@+id/nav_zooChapultepec"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textZooChapultepec"/>
+
+            </group>
+        </menu>
+    </item>
+    <item
+        android:title="@string/textSepAcuario">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_acuarioTwoOceans"
+                    android:icon="@drawable/baseline_train_24"
+                    android:title="@string/textAcuario"/>
+
+            </group>
+        </menu>
+    </item>
+</menu>

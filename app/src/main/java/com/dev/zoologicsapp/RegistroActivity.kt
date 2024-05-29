@@ -85,6 +85,7 @@ class RegistroActivity : AppCompatActivity() {
         mAuth.createUserWithEmailAndPassword(correoUser, passUser).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
                 val currentUser = mAuth.currentUser
+                val rol = "Usuario"
                 if (currentUser != null) {
                     val id = currentUser.uid
 
@@ -95,7 +96,8 @@ class RegistroActivity : AppCompatActivity() {
                         "Apellido" to apellUser,
                         "Correo" to correoUser,
                         "Username" to userUser,
-                        "Contraseña" to passUser
+                        "Contraseña" to passUser,
+                        "Rol" to rol
                     )
 
                     mFirestore.collection("Usuarios").add(user).addOnSuccessListener { documentReference ->

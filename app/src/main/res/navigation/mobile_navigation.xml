@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.dev.zoologicsapp.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_infoZoo"
+        android:name="com.dev.zoologicsapp.ui.informacionZoo.InfoZooFragment"
+        android:label="@string/textInfo"
+        tools:layout="@layout/fragment_infozoo" />
+
+    <fragment
+        android:id="@+id/nav_animaleszoo"
+        android:name="com.dev.zoologicsapp.ui.animales.AnimalFragment"
+        android:label="@string/textAnimal"
+        tools:layout="@layout/fragment_animal" />
+
+    <fragment
+        android:id="@+id/nav_zoologico"
+        android:name="com.dev.zoologicsapp.ui.zoologico.ZooFragment"
+        android:label="@string/textZoo"
+        tools:layout="@layout/fragment_zoo" />
+
+    <fragment
+        android:id="@+id/nav_especieszoo"
+        android:name="com.dev.zoologicsapp.ui.especies.EspecieFragment"
+        android:label="@string/textEspecie"
+        tools:layout="@layout/fragment_especie" />
+
+    <fragment
+        android:id="@+id/nav_familiaszoo"
+        android:name="com.dev.zoologicsapp.ui.familias.FamiliaFragment"
+        android:label="@string/textFam"
+        tools:layout="@layout/fragment_familia" />
+</navigation>

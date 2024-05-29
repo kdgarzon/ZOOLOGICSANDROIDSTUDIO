@@ -61,17 +61,57 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginUser(emailUser: String, passUser: String) {
-        mAuth.signInWithEmailAndPassword(emailUser, passUser).addOnCompleteListener {
-            if (it.isSuccessful){
-                finish()
-                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                Toast.makeText(this@LoginActivity, "Se ha iniciado sesión correctamente", Toast.LENGTH_SHORT).show()
+        mAuth.signInWithEmailAndPassword(emailUser, passUser).addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                val user = mAuth.currentUser
+                user?.let {
+                    obtenerRol(it.uid)
+                }
             }else{
                 Toast.makeText(this@LoginActivity, "Error", Toast.LENGTH_SHORT).show()
             }
         }.addOnFailureListener{
             Toast.makeText(this@LoginActivity, "Error al iniciar sesión", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun obtenerRol(userID: String) {
+        mFirestore.collection("Usuarios")
+            .whereEqualTo("id", userID)
+            .get()
+            .addOnSuccessListener { documents ->
+                if (!documents.isEmpty) {
+                    val document = documents.first() // Tomamos el primer documento que coincida con el id
+                    val role = document.getString("Rol")
+                    if (role != null) {
+                        dirigirPaneles(role)
+                    } else {
+                        Toast.makeText(this@LoginActivity, "No se encontró el rol del usuario", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    // Si no se encuentra el documento del usuario
+                    Toast.makeText(this@LoginActivity, "No se encontró el documento del usuario", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener {
+                // Si ocurre un error durante la consulta
+                Toast.makeText(this@LoginActivity, "Error al obtener el rol del usuario", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun dirigirPaneles(role: String) {
+        when (role) {
+            "Usuario" -> {
+                startActivity(Intent(this@LoginActivity, PanelUsuario::class.java))
+            }
+            "Administrador" -> {
+                startActivity(Intent(this@LoginActivity, PanelAdministrador::class.java))
+            }
+            else -> {
+                startActivity(Intent(this@LoginActivity, PanelZoo::class.java))
+            }
+        }
+        finish()
     }
 
     private fun irRegistrar() {
