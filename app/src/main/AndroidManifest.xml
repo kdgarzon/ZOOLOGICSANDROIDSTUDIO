@@ -13,6 +13,11 @@
         android:theme="@style/Theme.ZOOLOGICSAPP"
         tools:targetApi="31">
         <activity
+            android:name=".PanelAdministrador"
+            android:exported="false"
+            android:label="@string/title_activity_panel_administrador"
+            android:theme="@style/Theme.ZOOLOGICSAPP.NoActionBar" />
+        <activity
             android:name=".PanelUsuario"
             android:exported="false"
             android:label="@string/title_activity_panel_usuario"
@@ -22,9 +27,6 @@
             android:exported="false"
             android:label="@string/title_activity_panel_zoo"
             android:theme="@style/Theme.ZOOLOGICSAPP.NoActionBar" />
-        <activity
-            android:name=".PanelAdministrador"
-            android:exported="false" />
         <activity
             android:name=".CrearUsuario"
             android:exported="false" />
