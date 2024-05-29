@@ -4,28 +4,39 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.dev.zoologicsapp.R
+import androidx.lifecycle.ViewModelProvider
+import com.dev.zoologicsapp.databinding.FragmentZooLondresBinding
 
 class ZooLondres : Fragment() {
 
-    companion object {
-        fun newInstance() = ZooLondres()
-    }
+    private var _binding: FragmentZooLondresBinding? = null
 
-    private val viewModel: ZooLondresViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_zoo_londres, container, false)
+        val londresViewModel =
+            ViewModelProvider(this)[ZooLondresViewModel::class.java]
+
+        _binding = FragmentZooLondresBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        val textView: TextView = binding.textZooLondres
+        londresViewModel.text.observe(viewLifecycleOwner) {
+            textView.text = it
+        }
+        return root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -47,7 +47,8 @@ class PanelZoo : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_infoZoo, R.id.nav_animaleszoo, R.id.nav_especieszoo, R.id.nav_zoologico, R.id.nav_familiaszoo
+                R.id.nav_home, R.id.nav_infoZoo, R.id.nav_animaleszoo,
+                R.id.nav_especieszoo, R.id.nav_zoologico, R.id.nav_familiaszoo
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
