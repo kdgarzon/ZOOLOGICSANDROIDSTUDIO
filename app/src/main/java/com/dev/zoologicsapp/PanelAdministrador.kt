@@ -2,6 +2,9 @@ package com.dev.zoologicsapp
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -12,11 +15,17 @@ import androidx.navigation.ui.setupWithNavController
 import com.dev.zoologicsapp.databinding.ActivityPanelAdministradorBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class PanelAdministrador : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityPanelAdministradorBinding
+    private lateinit var mFirestore: FirebaseFirestore
+    private lateinit var headerView: View
+    private lateinit var mAuth: FirebaseAuth
+    private lateinit var textViewRole: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,11 +47,52 @@ class PanelAdministrador : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home_administrador, R.id.nav_infoAdmin, R.id.nav_usuariosAdmin,
+                R.id.nav_zoologicosAdmin, R.id.nav_animalesAdmin, R.id.nav_especiesAdmin
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        // Obtener el user y colocarlo en la barra de navegación dependiendo de quien inicie sesion
+        mAuth = FirebaseAuth.getInstance()
+        mFirestore = FirebaseFirestore.getInstance()
+
+        // Configurar el encabezado del NavigationView
+        headerView = navView.getHeaderView(0)
+        textViewRole = headerView.findViewById(R.id.textView)
+
+        // Obtener el user del usuario y actualizar el TextView
+
+        val user = mAuth.currentUser
+        user?.let {
+            mostrarUser(it.uid)
+        }
+
+    }
+
+    private fun mostrarUser(uid: String) {
+        mFirestore.collection("Usuarios")
+            .whereEqualTo("id", uid)
+            .get()
+            .addOnSuccessListener { documents ->
+                if (!documents.isEmpty) {
+                    val document = documents.first() // Tomamos el primer documento que coincida con el id
+                    val usern= document.getString("Username")
+                    if (usern != null) {
+                        textViewRole.text = usern
+                    } else {
+                        Toast.makeText(this@PanelAdministrador, "No se encontró el user del usuario", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    // Si no se encuentra el documento del usuario
+                    Toast.makeText(this@PanelAdministrador, "No se encontró el documento del usuario", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener {
+                // Si ocurre un error durante la consulta
+                Toast.makeText(this@PanelAdministrador, "Error al obtener el user del usuario", Toast.LENGTH_SHORT).show()
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

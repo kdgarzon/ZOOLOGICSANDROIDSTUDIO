@@ -10,6 +10,8 @@
     <string name="correo">Correo:</string>
     <string name="usuario">Usuario:</string>
     <string name="contraseña">Contraseña:</string>
+    <string name="tamanio">Tamaño (m2):</string>
+    <string name="presupuesto">Presupuesto:</string>
     <string name="registrar">REGISTRARSE</string>
     <string name="ya_hay_cuenta">¿Ya tienes una cuenta?</string>
     <string name="iniciar_sesion">INICIAR SESIÓN</string>
@@ -22,6 +24,8 @@
     <string name="hintcorreo">Correo</string>
     <string name="hintusuario">Usuario</string>
     <string name="hintcontraseña">Contraseña</string>
+    <string name="hinttam">Tamaño zoológico</string>
+    <string name="hintpresupuesto">Presupuesto anual</string>
 
 
     //CAMPOS DE TEXTO VENTANA DE LOGIN
@@ -42,6 +46,7 @@
     //TITULOS PESTAÑAS
 
     <string name="titCrearUsuario">CREAR USUARIO</string>
+    <string name="titCrearZoo">CREAR ZOOLOGICO</string>
     <string name="subInformacion">Información General</string>
     <string name="adm">PANEL ADMINISTRADOR</string>
     <string name="usu">PANEL DE USUARIO</string>
@@ -81,6 +86,16 @@
     <string name="textAcuario">Acuario Two Oceans</string>
     <string name="textSepAcuario">ACUARIOS</string>
     <string name="textSepZoo">ZOOLOGICOS</string>
+
+    //BARRA DE NAVEGACION DE ADMINISTRADOR
+
+    <string name="textZooA">Zoológicos</string>
+    <string name="textUsuA">Usuarios</string>
+
+    //LISTAS
+
+    <string name="textCiudad">Ciudad: </string>
+    <string name="textPais">País: </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">HOME DEL ZOOLOGICO</string>

@@ -1,10 +1,24 @@
 package com.dev.zoologicsapp
 
+import android.content.ContentValues
+import android.os.Bundle
+import android.util.Log
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class CrearUsuario : AppCompatActivity() {
 
-    /*private lateinit var autoCompleteTextView: AutoCompleteTextView
+    private lateinit var autoCompleteTextView: AutoCompleteTextView
     private lateinit var adapterItems: ArrayAdapter<String>
     private lateinit var creIdentificacion: EditText
     private lateinit var creNombre: EditText
@@ -75,7 +89,7 @@ class CrearUsuario : AppCompatActivity() {
                     mFirestore.collection("Usuarios").add(user).addOnSuccessListener { documentReference ->
                         Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
                         finish()
-                        startActivity(Intent(this@CrearUsuario, MainActivity::class.java))
+                        //startActivity(Intent(this@CrearUsuario, MainActivity::class.java))
                         Toast.makeText(this@CrearUsuario, "Usuario creado exitosamente", Toast.LENGTH_SHORT).show()
                     }.addOnFailureListener {
                         Toast.makeText(this@CrearUsuario, "No se creó el usuario en la colección Usuarios", Toast.LENGTH_SHORT).show()
@@ -114,5 +128,5 @@ class CrearUsuario : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 println("Error al traer los elementos de la colección: $exception")
             }
-    }*/
+    }
 }

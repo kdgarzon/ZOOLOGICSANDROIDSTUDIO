@@ -3,23 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation3"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_home_administrador">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.dev.zoologicsapp.ui.home.HomeFragment"
+        android:id="@+id/nav_home_administrador"
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.HomeAdministrador"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home_administrador" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.dev.zoologicsapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_infoAdmin"
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.InformacionAdm"
+        android:label="@string/textInfo"
+        tools:layout="@layout/fragment_informacion_adm" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_usuariosAdmin"
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.UsuariosAdministrador"
+        android:label="@string/textUsuA"
+        tools:layout="@layout/fragment_usuarios_administrador" />
+
+    <fragment
+        android:id="@+id/nav_zoologicosAdmin"
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.ZoologicosAdm"
+        android:label="@string/textZooA"
+        tools:layout="@layout/fragment_zoologicos_adm" />
+
+    <fragment
+        android:id="@+id/nav_animalesAdmin"
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.AnimalesAdm"
+        android:label="@string/textAnimal"
+        tools:layout="@layout/fragment_animales_adm" />
+
+    <fragment
+        android:id="@+id/nav_especiesAdmin"
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.EspeciesAdm"
+        android:label="@string/textEspecie"
+        tools:layout="@layout/fragment_especies_adm" />
+
+
 </navigation>

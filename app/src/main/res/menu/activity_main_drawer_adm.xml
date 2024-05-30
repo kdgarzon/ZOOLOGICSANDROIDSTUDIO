@@ -5,34 +5,33 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_home_administrador"
             android:icon="@drawable/baseline_home_24"
             android:title="@string/textInicio"/>
 
         <item
-            android:id="@+id/nav_infoZoo"
+            android:id="@+id/nav_infoAdmin"
             android:icon="@drawable/baseline_info_24"
             android:title="@string/textInfo"/>
 
         <item
-            android:id="@+id/nav_zoologico"
+            android:id="@+id/nav_usuariosAdmin"
             android:icon="@drawable/baseline_zoo_24"
-            android:title="@string/textZoo"/>
+            android:title="@string/textUsuA"/>
 
         <item
-            android:id="@+id/nav_animaleszoo"
+            android:id="@+id/nav_zoologicosAdmin"
+            android:icon="@drawable/baseline_familias_24"
+            android:title="@string/textZooA"/>
+
+        <item
+            android:id="@+id/nav_animalesAdmin"
             android:icon="@drawable/baseline_animales_24"
             android:title="@string/textAnimal"/>
 
         <item
-            android:id="@+id/nav_especieszoo"
+            android:id="@+id/nav_especiesAdmin"
             android:icon="@drawable/baseline_especies_24"
             android:title="@string/textEspecie"/>
-
-        <item
-            android:id="@+id/nav_familiaszoo"
-            android:icon="@drawable/baseline_familias_24"
-            android:title="@string/textFam"/>
-
     </group>
 </menu>
