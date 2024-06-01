@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.dev.zoologicsapp.R
 import com.dev.zoologicsapp.databinding.FragmentAnimalesAdmBinding
 
@@ -123,6 +124,10 @@ class AnimalesAdm : Fragment() {
             } else {
                 viewModel.crearAnimal(anioCreado, nomCreado)
             }
+        }
+
+        binding.btnListarAnimales.setOnClickListener{
+            findNavController().navigate(R.id.action_AnimalesAdm_to_FragmentListarAnimales)
         }
 
         viewModel.animalCreationStatus.observe(viewLifecycleOwner) { status ->

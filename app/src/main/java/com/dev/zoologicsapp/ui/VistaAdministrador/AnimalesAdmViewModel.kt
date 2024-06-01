@@ -25,6 +25,9 @@ class AnimalesAdmViewModel : ViewModel() {
     private val _zoologicos = MutableLiveData<List<String>>()
     val zoologicos: LiveData<List<String>> get() = _zoologicos
 
+    private val _animales = MutableLiveData<List<Animal>>()
+    val animales: LiveData<List<Animal>> get() = _animales
+
     val selectedEspecie = MutableLiveData<String>()
     val selectedSex = MutableLiveData<String>()
     val selectedContinente = MutableLiveData<String>()
@@ -137,6 +140,22 @@ class AnimalesAdmViewModel : ViewModel() {
             }
             .addOnFailureListener { exception ->
                 Log.e("AnimalesAdmViewModel", "Error al traer los elementos de la colección de zoologicos: $exception")
+            }
+    }
+
+    fun fetchAnimales() {
+        mFirestore.collection("Animales")
+            .get()
+            .addOnSuccessListener { documents ->
+                val animalList = mutableListOf<Animal>()
+                for (document in documents) {
+                    val animal = document.toObject(Animal::class.java)
+                    animalList.add(animal)
+                }
+                _animales.value = animalList
+            }
+            .addOnFailureListener { exception ->
+                Log.e("AnimalesAdmViewModel", "Error al traer los animales: $exception")
             }
     }
 

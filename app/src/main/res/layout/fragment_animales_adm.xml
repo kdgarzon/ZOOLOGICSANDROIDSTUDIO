@@ -228,6 +228,14 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
             android:text="@string/btnInsertarUsuario" />
+
+        <Button
+            android:id="@+id/btnListarAnimales"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="@string/btnListar" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

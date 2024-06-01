@@ -43,7 +43,17 @@
         android:id="@+id/nav_animalesAdmin"
         android:name="com.dev.zoologicsapp.ui.VistaAdministrador.AnimalesAdm"
         android:label="@string/textAnimal"
-        tools:layout="@layout/fragment_animales_adm" />
+        tools:layout="@layout/fragment_animales_adm" >
+        <action
+            android:id="@+id/action_AnimalesAdm_to_FragmentListarAnimales"
+            app:destination="@id/nav_listarAnimales" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_listarAnimales"
+        android:name="com.dev.zoologicsapp.FragmentListarAnimales"
+        android:label="@string/btnListar"
+        tools:layout="@layout/fragment_listar_animales" />
 
     <fragment
         android:id="@+id/nav_especiesAdmin"
