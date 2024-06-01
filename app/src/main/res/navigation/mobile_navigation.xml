@@ -39,5 +39,17 @@
         android:id="@+id/nav_familiaszoo"
         android:name="com.dev.zoologicsapp.ui.familias.FamiliaFragment"
         android:label="@string/textFam"
-        tools:layout="@layout/fragment_familia" />
+        tools:layout="@layout/fragment_familia">
+
+        <action
+            android:id="@+id/action_familiaFragment_to_fragmentListarFamilias"
+            app:destination="@id/nav_listarfamiliaszoo" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_listarfamiliaszoo"
+        android:name="com.dev.zoologicsapp.FragmentListarFamilias"
+        android:label="@string/btnListar"
+        tools:layout="@layout/fragment_listar_familias" />
 </navigation>

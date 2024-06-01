@@ -12,6 +12,16 @@
     <string name="contraseña">Contraseña:</string>
     <string name="tamanio">Tamaño (m2):</string>
     <string name="presupuesto">Presupuesto:</string>
+    <string name="familia">Familia:</string>
+    <string name="nomVulgar">Nombre vulgar de la especie:</string>
+    <string name="nomCientifico">Nombre científico:</string>
+    <string name="estado">Estado de conservación:</string>
+    <string name="especie">Especie:</string>
+    <string name="sexo">Sexo:</string>
+    <string name="continente">Continente:</string>
+    <string name="zoologico">Zoológico:</string>
+    <string name="anio">Año:</string>
+
     <string name="registrar">REGISTRARSE</string>
     <string name="ya_hay_cuenta">¿Ya tienes una cuenta?</string>
     <string name="iniciar_sesion">INICIAR SESIÓN</string>
@@ -25,7 +35,11 @@
     <string name="hintusuario">Usuario</string>
     <string name="hintcontraseña">Contraseña</string>
     <string name="hinttam">Tamaño zoológico</string>
+    <string name="hintfamilia">Familia</string>
     <string name="hintpresupuesto">Presupuesto anual</string>
+    <string name="hintnomVulgar">Nombre vulgar</string>
+    <string name="hintnomCientifico">Nombre científico</string>
+    <string name="hintanio">Año</string>
 
 
     //CAMPOS DE TEXTO VENTANA DE LOGIN
@@ -42,11 +56,15 @@
     <string name="btnCerrar">CERRAR SESION</string>
     <string name="btnCrear">CREAR USUARIO</string>
     <string name="btnInsertarUsuario">INSERTAR</string>
+    <string name="btnListar">CONSULTAR DATOS</string>
 
     //TITULOS PESTAÑAS
 
     <string name="titCrearUsuario">CREAR USUARIO</string>
     <string name="titCrearZoo">CREAR ZOOLOGICO</string>
+    <string name="titCrearFamilia">CREAR FAMILIA</string>
+    <string name="titCrearEspecie">CREAR ESPECIE</string>
+    <string name="titCrearAnimal">CREAR ANIMAL</string>
     <string name="subInformacion">Información General</string>
     <string name="adm">PANEL ADMINISTRADOR</string>
     <string name="usu">PANEL DE USUARIO</string>

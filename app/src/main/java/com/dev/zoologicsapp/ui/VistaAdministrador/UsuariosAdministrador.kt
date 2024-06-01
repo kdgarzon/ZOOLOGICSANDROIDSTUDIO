@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.dev.zoologicsapp.R
 import com.dev.zoologicsapp.databinding.FragmentUsuariosAdministradorBinding
 
@@ -62,6 +63,10 @@ class UsuariosAdministrador : Fragment() {
             } else {
                 viewModel.crearUsuario(identCreada, nomCreado, apelCreado, userCreado, contraCreada, correoCreado)
             }
+        }
+
+        binding.btnListarUsuarios.setOnClickListener{
+            findNavController().navigate(R.id.action_UsuariosAdministrador_to_FragmentListarUsuarios)
         }
 
         viewModel.userCreationStatus.observe(viewLifecycleOwner, Observer { status ->

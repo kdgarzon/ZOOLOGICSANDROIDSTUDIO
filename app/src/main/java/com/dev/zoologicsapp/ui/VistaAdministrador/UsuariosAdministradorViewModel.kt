@@ -19,6 +19,9 @@ class UsuariosAdministradorViewModel : ViewModel() {
     private val _userCreationStatus = MutableLiveData<Boolean>()
     val userCreationStatus: LiveData<Boolean> get() = _userCreationStatus
 
+    private val _usuarios = MutableLiveData<List<Usuario>>()
+    val usuarios: LiveData<List<Usuario>> get() = _usuarios
+
     private val mFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
@@ -41,6 +44,22 @@ class UsuariosAdministradorViewModel : ViewModel() {
             }
             .addOnFailureListener { exception ->
                 Log.e("UsuariosAdmViewModel", "Error al traer los elementos de la colección: $exception")
+            }
+    }
+
+    fun fetchUsuarios() {
+        mFirestore.collection("Usuarios")
+            .get()
+            .addOnSuccessListener { documents ->
+                val userList = mutableListOf<Usuario>()
+                for (document in documents) {
+                    val usuario = document.toObject(Usuario::class.java)
+                    userList.add(usuario)
+                }
+                _usuarios.value = userList
+            }
+            .addOnFailureListener { exception ->
+                Log.e("UsuariosAdmViewModel", "Error al traer los usuarios: $exception")
             }
     }
 

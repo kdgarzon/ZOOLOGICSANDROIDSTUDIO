@@ -21,7 +21,17 @@
         android:id="@+id/nav_usuariosAdmin"
         android:name="com.dev.zoologicsapp.ui.VistaAdministrador.UsuariosAdministrador"
         android:label="@string/textUsuA"
-        tools:layout="@layout/fragment_usuarios_administrador" />
+        tools:layout="@layout/fragment_usuarios_administrador" >
+        <action
+            android:id="@+id/action_UsuariosAdministrador_to_FragmentListarUsuarios"
+            app:destination="@id/nav_listarUsuarios" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_listarUsuarios"
+        android:name="com.dev.zoologicsapp.FragmentListarUsuarios"
+        android:label="@string/btnListar"
+        tools:layout="@layout/fragment_listar_usuarios" />
 
     <fragment
         android:id="@+id/nav_zoologicosAdmin"
