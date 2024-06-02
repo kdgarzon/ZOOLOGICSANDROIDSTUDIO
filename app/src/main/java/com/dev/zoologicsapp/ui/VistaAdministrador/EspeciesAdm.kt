@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.dev.zoologicsapp.R
 import com.dev.zoologicsapp.databinding.FragmentEspeciesAdmBinding
 
@@ -75,6 +76,10 @@ class EspeciesAdm : Fragment() {
             } else {
                 viewModel.crearEspecie(nomVulgarCreado, nomCientificoCreado)
             }
+        }
+
+        binding.btnListarEspecies.setOnClickListener {
+            findNavController().navigate(R.id.action_EspeciesAdm_to_FragmentListarEspecies)
         }
 
         viewModel.especieCreationStatus.observe(viewLifecycleOwner) { status ->

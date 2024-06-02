@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dev.zoologicsapp.databinding.FragmentListarFamiliasBinding
@@ -36,11 +35,11 @@ class FragmentListarFamilias : Fragment() {
             familiaAdapter.setFamilias(familias)
         }*/
 
-        viewModel.familias.observe(viewLifecycleOwner, Observer { familias ->
+        viewModel.familias.observe(viewLifecycleOwner) { familias ->
             familias?.let {
                 familiaAdapter.setFamilias(it)
             }
-        })
+        }
 
         viewModel.fetchFamilias()
 

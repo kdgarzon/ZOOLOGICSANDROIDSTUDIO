@@ -37,7 +37,17 @@
         android:id="@+id/nav_zoologicosAdmin"
         android:name="com.dev.zoologicsapp.ui.VistaAdministrador.ZoologicosAdm"
         android:label="@string/textZooA"
-        tools:layout="@layout/fragment_zoologicos_adm" />
+        tools:layout="@layout/fragment_zoologicos_adm" >
+        <action
+            android:id="@+id/action_ZoologicosAdm_to_FragmentListarZoologicos"
+            app:destination="@id/nav_listarZoologicos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_listarZoologicos"
+        android:name="com.dev.zoologicsapp.FragmentListarZoologicos"
+        android:label="@string/btnListar"
+        tools:layout="@layout/fragment_listar_zoologicos" />
 
     <fragment
         android:id="@+id/nav_animalesAdmin"
@@ -59,7 +69,17 @@
         android:id="@+id/nav_especiesAdmin"
         android:name="com.dev.zoologicsapp.ui.VistaAdministrador.EspeciesAdm"
         android:label="@string/textEspecie"
-        tools:layout="@layout/fragment_especies_adm" />
+        tools:layout="@layout/fragment_especies_adm" >
+        <action
+            android:id="@+id/action_EspeciesAdm_to_FragmentListarEspecies"
+            app:destination="@id/nav_listarEspecies" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_listarEspecies"
+        android:name="com.dev.zoologicsapp.FragmentListarEspecies"
+        android:label="@string/btnListar"
+        tools:layout="@layout/fragment_listar_especies" />
 
 
 </navigation>

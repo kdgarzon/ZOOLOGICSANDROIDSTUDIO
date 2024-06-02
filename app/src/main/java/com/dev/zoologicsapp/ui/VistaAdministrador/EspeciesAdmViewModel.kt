@@ -20,6 +20,9 @@ class EspeciesAdmViewModel : ViewModel() {
     val selectedEstado = MutableLiveData<String>()
 
     private val _especieCreationStatus = MutableLiveData<Boolean>()
+
+    private val _especies = MutableLiveData<List<Especie>>()
+    val especies: LiveData<List<Especie>> get() = _especies
     val especieCreationStatus: LiveData<Boolean> get() = _especieCreationStatus
 
     private val mFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -67,7 +70,21 @@ class EspeciesAdmViewModel : ViewModel() {
             }
     }
 
-
+    fun fetchEspecies() {
+        mFirestore.collection("Especies")
+            .get()
+            .addOnSuccessListener { documents ->
+                val especieList = mutableListOf<Especie>()
+                for (document in documents) {
+                    val especie = document.toObject(Especie::class.java)
+                    especieList.add(especie)
+                }
+                _especies.value = especieList
+            }
+            .addOnFailureListener { exception ->
+                Log.e("EspeciesAdmViewModel", "Error al traer las especies: $exception")
+            }
+    }
 
     fun crearEspecie(nomVulgarCreado: String, nomCientificoCreado: String) {
         val espe = hashMapOf(

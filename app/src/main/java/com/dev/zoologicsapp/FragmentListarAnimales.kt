@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dev.zoologicsapp.databinding.FragmentListarAnimalesBinding
@@ -31,12 +30,12 @@ class FragmentListarAnimales : Fragment() {
         binding.recyclerViewAnimales.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewAnimales.adapter = animalAdapter
 
-        viewModel.animales.observe(viewLifecycleOwner, Observer { animales ->
+        viewModel.animales.observe(viewLifecycleOwner) { animales ->
             animalAdapter.setAnimales(animales)
             animales?.let {
                 animalAdapter.setAnimales(it)
             }
-        })
+        }
 
         viewModel.fetchAnimales()
 

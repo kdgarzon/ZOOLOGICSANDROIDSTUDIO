@@ -22,6 +22,9 @@ class ZoologicosAdmViewModel : ViewModel() {
     private val _zooCreationStatus = MutableLiveData<Boolean>()
     val zooCreationStatus: LiveData<Boolean> get() = _zooCreationStatus
 
+    private val _zoologicos = MutableLiveData<List<Zoologico>>()
+    val zoologicos: LiveData<List<Zoologico>> get() = _zoologicos
+
     private val mFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     init {
@@ -67,7 +70,21 @@ class ZoologicosAdmViewModel : ViewModel() {
             }
     }
 
-
+    fun fetchZoologicos() {
+        mFirestore.collection("Zoologicos")
+            .get()
+            .addOnSuccessListener { documents ->
+                val zooList = mutableListOf<Zoologico>()
+                for (document in documents) {
+                    val zoologico = document.toObject(Zoologico::class.java)
+                    zooList.add(zoologico)
+                }
+                _zoologicos.value = zooList
+            }
+            .addOnFailureListener { exception ->
+                Log.e("ZoologicosAdmViewModel", "Error al traer los zoologicos: $exception")
+            }
+    }
 
     fun crearZoo(tamCreado: Number, nomCreado: String, presupuestoCreado: Number) {
         val zoo = hashMapOf(

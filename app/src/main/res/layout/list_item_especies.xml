@@ -7,45 +7,28 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/textViewNombreAnimal"
+        android:id="@+id/textViewNombreVulgarEspecie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewEspecieAnimal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textViewSexoAnimal"
+        android:id="@+id/textViewNombreCientificoEspecie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/textViewContinenteAnimal"
+        android:id="@+id/textViewFamiliaEspecie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/textViewPaisAnimal"
+        android:id="@+id/textViewPeligroEspecie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/textViewAñoAnimal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/textViewZooAnimal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp" />
 </LinearLayout>
