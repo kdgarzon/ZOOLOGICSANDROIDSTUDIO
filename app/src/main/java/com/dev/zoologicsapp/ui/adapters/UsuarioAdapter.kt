@@ -3,17 +3,18 @@ package com.dev.zoologicsapp.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dev.zoologicsapp.R
 import com.dev.zoologicsapp.ui.VistaAdministrador.Usuario
 
-class UsuarioAdapter : RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() {
+class UsuarioAdapter(private val onModifyClick: (Usuario) -> Unit) : RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() {
     private var usuarios: List<Usuario> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsuarioViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_usuarios, parent, false)
-        return UsuarioViewHolder(view)
+        return UsuarioViewHolder(view, onModifyClick)
     }
 
     override fun onBindViewHolder(holder: UsuarioViewHolder, position: Int) {
@@ -30,7 +31,7 @@ class UsuarioAdapter : RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() 
         notifyDataSetChanged()
     }
 
-    class UsuarioViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class UsuarioViewHolder(itemView: View, private val onModifyClick: (Usuario) -> Unit) : RecyclerView.ViewHolder(itemView) {
         private val nombreTextView: TextView = itemView.findViewById(R.id.textViewNombreUsuario)
         private val apellidoTextView: TextView = itemView.findViewById(R.id.textViewApellidoUsuario)
         private val identificacionTextView: TextView = itemView.findViewById(R.id.textViewIdentUsuario)
@@ -39,16 +40,20 @@ class UsuarioAdapter : RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() 
         private val contraTextView: TextView = itemView.findViewById(R.id.textViewContraUsuario)
         private val rolTextView: TextView = itemView.findViewById(R.id.textViewRolUsuario)
 
-
+        private val modificarButton: ImageButton = itemView.findViewById(R.id.btnModificar)
         fun bind(usuario: Usuario) {
 
-            nombreTextView.text = usuario.Nombre
-            apellidoTextView.text = usuario.Apellido
-            identificacionTextView.text = usuario.Identificacion
-            correoTextView.text = usuario.Correo
-            userTextView.text = usuario.Username
-            contraTextView.text = usuario.Contraseña
-            rolTextView.text = usuario.Rol
+            nombreTextView.text = usuario.nombre
+            apellidoTextView.text = usuario.apellido
+            identificacionTextView.text = usuario.identificacion
+            correoTextView.text = usuario.correo
+            userTextView.text = usuario.username
+            contraTextView.text = usuario.contraseña
+            rolTextView.text = usuario.rol
+
+            modificarButton.setOnClickListener {
+                onModifyClick(usuario)
+            }
         }
     }
 }

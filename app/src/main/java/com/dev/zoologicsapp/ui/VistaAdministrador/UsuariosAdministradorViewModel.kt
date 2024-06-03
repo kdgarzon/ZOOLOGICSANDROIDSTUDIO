@@ -72,13 +72,13 @@ class UsuariosAdministradorViewModel : ViewModel() {
 
                     val user = hashMapOf(
                         "id" to id,
-                        "Identificacion" to identCreada,
-                        "Nombre" to nomCreado,
-                        "Apellido" to apelCreado,
-                        "Correo" to correoCreado,
-                        "Username" to userCreado,
-                        "Contraseña" to contraCreada,
-                        "Rol" to selectedRole.value
+                        "identificacion" to identCreada,
+                        "nombre" to nomCreado,
+                        "apellido" to apelCreado,
+                        "correo" to correoCreado,
+                        "username" to userCreado,
+                        "contraseña" to contraCreada,
+                        "rol" to selectedRole.value
                     )
 
                     mFirestore.collection("Usuarios").add(user).addOnSuccessListener { documentReference ->
@@ -94,5 +94,17 @@ class UsuariosAdministradorViewModel : ViewModel() {
                 _userCreationStatus.value = false
             }
         }
+    }
+
+    fun updateUsuario(usuario: Usuario) {
+        mFirestore.collection("Usuarios").document(usuario.id)
+            .set(usuario)
+            .addOnSuccessListener {
+                fetchUsuarios() // Refresh the animal list
+                Log.d("UsuariosAdministradorViewModel", "Usuario actualizado correctamente")
+            }
+            .addOnFailureListener { exception ->
+                Log.e("UsuariosAdministradorViewModel", "Error al actualizar el usuario: $exception")
+            }
     }
 }

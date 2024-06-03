@@ -14,7 +14,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.dev.zoologicsapp.databinding.ActivityPanelZooBinding
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -35,11 +34,11 @@ class PanelZoo : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarPanelZoo.toolbar)
 
-        binding.appBarPanelZoo.fab.setOnClickListener { view ->
+        /*binding.appBarPanelZoo.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
-        }
+        }*/
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_panel_zoo)
@@ -78,7 +77,7 @@ class PanelZoo : AppCompatActivity() {
             .addOnSuccessListener { documents ->
                 if (!documents.isEmpty) {
                     val document = documents.first() // Tomamos el primer documento que coincida con el id
-                    val role = document.getString("Rol")
+                    val role = document.getString("rol")
                     if (role != null) {
                         textViewRole.text = role
                     } else {

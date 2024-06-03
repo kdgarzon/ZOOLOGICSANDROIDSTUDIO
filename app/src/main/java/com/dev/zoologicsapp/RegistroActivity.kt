@@ -91,13 +91,13 @@ class RegistroActivity : AppCompatActivity() {
 
                     val user = hashMapOf(
                         "id" to id,
-                        "Identificacion" to identUser,
-                        "Nombre" to nomUser,
-                        "Apellido" to apellUser,
-                        "Correo" to correoUser,
-                        "Username" to userUser,
-                        "Contraseña" to passUser,
-                        "Rol" to rol
+                        "identificacion" to identUser,
+                        "nombre" to nomUser,
+                        "apellido" to apellUser,
+                        "correo" to correoUser,
+                        "username" to userUser,
+                        "contraseña" to passUser,
+                        "rol" to rol
                     )
 
                     mFirestore.collection("Usuarios").add(user).addOnSuccessListener { documentReference ->

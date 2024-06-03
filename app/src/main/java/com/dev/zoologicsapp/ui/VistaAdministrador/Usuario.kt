@@ -2,11 +2,11 @@ package com.dev.zoologicsapp.ui.VistaAdministrador
 
 data class Usuario(
     val id: String = "",
-    val Nombre: String = "",
-    val Apellido: String = "",
-    val Correo: String = "",
-    val Identificacion: String = "",
-    val Username: String = "",
-    val Contraseña: String = "",
-    val Rol: String = ""
+    val nombre: String = "",
+    val apellido: String = "",
+    val correo: String = "",
+    val identificacion: String = "",
+    val username: String = "",
+    val contraseña: String = "",
+    val rol: String = ""
 )

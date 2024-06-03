@@ -21,9 +21,13 @@
     <string name="continente">Continente:</string>
     <string name="zoologico">Zoológico:</string>
     <string name="anio">Año:</string>
+    <string name="rol">Rol:</string>
 
     <string name="registrar">REGISTRARSE</string>
     <string name="ya_hay_cuenta">¿Ya tienes una cuenta?</string>
+    <string name="olvidarcontraseñah">¿Olvidaste tu contraseña?</string>
+    <string name="forgot">Restablecer contraseña</string>
+    <string name="desc">Ingrese su correo electrónico</string>
     <string name="iniciar_sesion">INICIAR SESIÓN</string>
 
     //HINTS CAMPOS DE TEXTO EDITABLES
@@ -40,6 +44,7 @@
     <string name="hintnomVulgar">Nombre vulgar</string>
     <string name="hintnomCientifico">Nombre científico</string>
     <string name="hintanio">Año</string>
+    <string name="hintEditarFamilia">Nombre de la familia</string>
 
 
     //CAMPOS DE TEXTO VENTANA DE LOGIN
@@ -57,6 +62,10 @@
     <string name="btnCrear">CREAR USUARIO</string>
     <string name="btnInsertarUsuario">INSERTAR</string>
     <string name="btnListar">CONSULTAR DATOS</string>
+    <string name="btnModificar">Modificar</string>
+    <string name="btnGuardar">GUARDAR</string>
+    <string name="btnCancelar">CANCELAR</string>
+    <string name="btnReset">RESET</string>
 
     //TITULOS PESTAÑAS
 
@@ -69,6 +78,8 @@
     <string name="adm">PANEL ADMINISTRADOR</string>
     <string name="usu">PANEL DE USUARIO</string>
     <string name="zoo">PANEL DE ZOOLOGICO</string>
+    <string name="titEditarFamilia">EDITAR FAMILIA</string>
+    <string name="menu_home">Home</string>
 
     //LISTAS DESPLEGABLES
 
@@ -120,16 +131,162 @@
     <string name="title_activity_panel_zoo">PanelZoo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_panel_usuario">PanelUsuario</string>
     <string name="title_activity_panel_administrador">PanelAdministrador</string>
+
+    //NOMBRES DE ZOOLÓGICOS
+
+    <string name="textSanDiego">Zoológico de San Diego</string>
+    <string name="textSingapur">Zoológico de Singapur</string>
+    <string name="textToronto">Zoológico de Toronto</string>
+    <string name="textLoroParque">Zoológico Loro Parque</string>
+    <string name="textSchonbrunn">Zoológico de Schonbrunn</string>
+    <string name="textLondres">Zoológico de Londres</string>
+    <string name="textBerlin">Zoológico de Berlín</string>
+    <string name="textBronx">Zoológico del Bronx</string>
+    <string name="textChapultepec">Zoológico de Chapultepec</string>
+    <string name="textAcuarioTwo">Acuario Two Oceans</string>
+
+    //DESCRIPCIÓN DE LOS ZOOS
+
+    <string name="descripcionSanDiego">
+            San Diego Zoo Wildlife Alliance es una organización internacional sin fines de lucro
+            dedicada a la conservación con dos puertas principales: el Zoológico de San Diego y el
+            Parque Safari del Zoológico de San Diego. Integramos la salud y el cuidado de la vida
+            silvestre, la ciencia y la educación para desarrollar soluciones de conservación
+            sostenibles.
+
+            El famoso zoo de San Diego es una visita obligada cuando se viaja al sur de California,
+            y aquí te contamos por qué. Este gran parque de 40 hectáreas alberga más de 4,000
+            animales raros y en peligro de extinción de todo el mundo, como pandas, koalas,
+            tigres y osos polares, entre otros. El parque también cuenta con una colección botánica
+            de más de 700,000 plantas exóticas.
+
+            TripAdvisor lo ha clasificado como el segundo zoológico en el mundo y ha ganado muchas
+            veces el premio Travelers Choice, que incluye una lista de los mejores zoológicos
+            basada en millones de opiniones de viajeros.
+    </string>
+
+    <string name="descripcionSingapur">
+            El Singapore Zoo (Zoológico de Singapur) es uno de los principales jardines zoológicos
+            del mundo, elegido varias veces como mejor zoológico de Asia. Se encuentra localizado
+            en el norte de Singapur, en el medio de una reserva natural, en un entorno de selva
+            tropical.
+
+            El zoo, que ocupa una extensión de 26 hectáreas, alberga a 2.800 animales de 300
+            especies. Tiene varios kilómetros de senderos asfaltados que permite ver de cerca
+            todas las especies, de los osos polares a los orangutanes. Para desplazarse por la
+            gran extensión del parque se puede usar un tren eléctrico que no está incluído en el
+            precio de la entrada (por un precio fijo, se puede subir y bajar del tren durante todo
+            el día; es una ayuda para personas con movilidad reducida o en días de mucho calor).
+    </string>
+
+    <string name="descripcionToronto">
+            El Zoológico de Toronto es un jardín zoológico localizado en el distrito de Scarborough
+            en Toronto, Canadá. Fue inaugurado el 15 de agosto de 1974 como Zoológico Metropolitano
+            de Toronto y es una propiedad de la ciudad de Toronto; la palabra "Metropolitano" fue
+            retirada del nombre cuando las ciudades de la Municipalidad de la Región Metropolitana
+            de Toronto fueron reunidas para formar la ciudad de Toronto.
+    </string>
+
+    <string name="descripcionBerlin">
+            Dos elefantes tumbados de arenisca del Elba soportan dos pesadas columnas sobre las
+            que descansa un techo curvado, decorado con pinturas doradas de Asia Oriental y tallas
+            imaginativas: el Jardín Zoológico ya deja claro desde su entrada principal – la
+            Elefantentor (Puerta de los Elefantes) construida en 1899 – que es un lugar único.
+            Es realmente un zoo de superlativos: es el zoológico más antiguo de Alemania
+            (inaugurado en 1844) con alrededor de 20 000 animales de más de 1000 especies.
+            El Acuario de Berlín es uno de los acuarios más importante de Europa. El zoo tiene
+            además una casa de hipopótamos y uno de los aviarios más grandes y modernos de Europa.
+    </string>
+
+    <string name="descripcionLoroParque">
+            El bienestar animal entendido de forma integral es nuestra máxima preocupación.
+            Cuidamos de los animales que habitan en nuestro parque desde el amor y el respeto.
+            Diseñamos planes específicos para cada especie y animal que está bajo nuestro cuidado,
+            y lo hacemos desde los hallazgos biológicos obtenidos en zoológicos modernos y
+            mediante la aplicación de los conocimientos veterinarios a la fauna silvestre.
+    </string>
+
+    <string name="descripcionLondres">
+            Cuando visitas el Zoológico de Londres, estás haciendo grandes cosas en tu gran día.
+            Somos más que un simple zoológico: somos parte de la ZSL (Sociedad Zoológica de
+            Londres), una organización benéfica mundial para la conservación de la vida silvestre.
+            Nuestros equipos de conservacionistas, científicos, técnicos y especialistas
+            comunitarios están activos en más de 70 países, y cada visita al Zoológico de Londres
+            ayuda a financiar su trabajo vital para restaurar hábitats y proteger la vida silvestre.
+
+            También llevamos a cabo un trabajo de conservación crucial aquí en nuestros zoológicos,
+            desde la reintroducción de los caracoles más pequeños hasta la cría y el cuidado de
+            los tigres de Sumatra en peligro crítico de extinción , pasando por el avance del
+            conocimiento para ayudar con la conservación global en el campo, que incluye la
+            protección de los rinocerontes salvajes en África . Restaurar ecosistemas de manglares
+            en Asia y reintroducir lirones en el Reino Unido.
+
+            Asegúrate de visitar La vida secreta de los reptiles y anfibios cuando se abra a
+            finales de 2023 para ver las singulares ranas gallinas de montaña y descubrir cómo
+            salvamos a su especie de la extinción total. Cuando se descubrió que había habido un
+            colapso en la única población del mundo de estas majestuosas ranas en su hábitat
+            insular, transportamos por aire a los últimos animales supervivientes a un lugar
+            seguro antes de que se extinguieran.
+    </string>
+
+    <string name="descripcionBronx">
+            El Zoológico del Bronx abarca más de 265 acres, lo que significa que hay muchas
+            oportunidades para que puedas conectarte con los animales que amas. Ya sea que desee
+            ver pastar a los bisontes o escuchar a los expertos durante una charla con los
+            cuidadores, lo tenemos cubierto.
+    </string>
+
+    <string name="descripcionChapultepec">
+            El Zoológico de Chapultepec es una de las instituciones recreativas más populares de la
+            Ciudad de México, tanto para los habitantes de esta como para los turistas nacionales y
+            extranjeros, es considerado un centro de integración social, familiar e intergeneracional
+            que forma parte de nuestra historia, por lo que puede considerarse como el Zoológico
+            Nacional.
+    </string>
+
+    <string name="descripcionSchonbrunn">
+            El zoológico de Schönbrunn es el zoológico más antiguo del mundo y ha sido nombrado
+            seis veces seguidas el mejor zoológico de Europa . Parte del sitio del Patrimonio
+            Cultural Mundial de la UNESCO con la residencia imperial de verano del Palacio de
+            Schönbrunn en su centro, ofrece una combinación única de cultura y naturaleza, al
+            tiempo que promueve la conservación y la biodiversidad. El atractivo especial del
+            zoológico proviene de su encanto imperial.
+
+            Más allá de la educación, la recreación y la investigación, la conservación de la
+            naturaleza y la protección de las especies se encuentran entre las principales
+            misiones de un zoológico gestionado científicamente. Por eso el zoológico de
+            Schönbrunn participa en proyectos de conservación de la naturaleza. El zoológico
+            proporciona financiación, participa en programas de cría en cautiverio, realiza
+            trabajos de relaciones públicas, aporta experiencia y apoya activamente los esfuerzos
+            de investigación. Esto ha significado un compromiso a largo plazo con numerosos
+            proyectos. Varios proyectos se llevan a cabo en países lejanos, otros están anclados
+            en Austria.
+    </string>
+
+    <string name="descripcionTwoOceans">
+            Este acuario tiene una fuerte ética de conservación, que proporciona apoyo para la
+            conservación de los tiburones, la rehabilitación de los pingüinos y tortugas y ayuda
+            a liberar a las focas que a veces se quedan enredadas en tiras de plástico e hilos de
+            pesca.
+
+            Los visitantes pueden pasar felizmente una tarde explorando el espectáculo de primera
+            clase, que entre ellos se encuentra una gran pecera de depredadores con tiburones
+            mellados (o ragged-tooth), un bosque de algas marinas (uno de los únicos tres que
+            quedan en el mundo), las galerías de los océanos Índico y Atlántico y una pantalla de
+            litoral que alberga pingüinos africanos y saltadores.
+    </string>
+
+
+
+
+
+
+
 
 
 </resources>

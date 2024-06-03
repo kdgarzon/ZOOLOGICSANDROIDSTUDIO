@@ -19,21 +19,52 @@
 
     <fragment
         android:id="@+id/nav_animaleszoo"
-        android:name="com.dev.zoologicsapp.ui.animales.AnimalFragment"
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.AnimalesAdm"
         android:label="@string/textAnimal"
-        tools:layout="@layout/fragment_animal" />
+        tools:layout="@layout/fragment_animales_adm" >
+        <action
+            android:id="@+id/action_AnimalesAdm_to_FragmentListarAnimales"
+            app:destination="@id/nav_listarAnimalesZoo" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_listarAnimalesZoo"
+        android:name="com.dev.zoologicsapp.FragmentListarAnimales"
+        android:label="@string/btnListar"
+        tools:layout="@layout/fragment_listar_animales" />
 
     <fragment
         android:id="@+id/nav_zoologico"
-        android:name="com.dev.zoologicsapp.ui.zoologico.ZooFragment"
-        android:label="@string/textZoo"
-        tools:layout="@layout/fragment_zoo" />
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.ZoologicosAdm"
+        android:label="@string/textZooA"
+        tools:layout="@layout/fragment_zoologicos_adm" >
+        <action
+            android:id="@+id/action_ZoologicosAdm_to_FragmentListarZoologicos"
+            app:destination="@id/nav_listarZoologicos" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_listarZoologicos"
+        android:name="com.dev.zoologicsapp.FragmentListarZoologicos"
+        android:label="@string/btnListar"
+        tools:layout="@layout/fragment_listar_zoologicos" />
+
 
     <fragment
         android:id="@+id/nav_especieszoo"
-        android:name="com.dev.zoologicsapp.ui.especies.EspecieFragment"
+        android:name="com.dev.zoologicsapp.ui.VistaAdministrador.EspeciesAdm"
         android:label="@string/textEspecie"
-        tools:layout="@layout/fragment_especie" />
+        tools:layout="@layout/fragment_especies_adm" >
+        <action
+            android:id="@+id/action_EspeciesAdm_to_FragmentListarEspecies"
+            app:destination="@id/nav_listarEspecies" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_listarEspecies"
+        android:name="com.dev.zoologicsapp.FragmentListarEspecies"
+        android:label="@string/btnListar"
+        tools:layout="@layout/fragment_listar_especies" />
+
+
 
     <fragment
         android:id="@+id/nav_familiaszoo"
@@ -46,7 +77,6 @@
             app:destination="@id/nav_listarfamiliaszoo" />
 
     </fragment>
-
     <fragment
         android:id="@+id/nav_listarfamiliaszoo"
         android:name="com.dev.zoologicsapp.FragmentListarFamilias"

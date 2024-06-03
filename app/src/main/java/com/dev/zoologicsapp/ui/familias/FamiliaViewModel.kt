@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 
 class FamiliaViewModel : ViewModel() {
     private val _familiaCreationStatus = MutableLiveData<Boolean>()
@@ -43,6 +44,22 @@ class FamiliaViewModel : ViewModel() {
             }
             .addOnFailureListener { exception ->
                 Log.e("FamiliaViewModel", "Error fetching families", exception)
+            }
+    }
+
+    fun updateFamilia(familia: Familia, newFamiliaName: String) {
+        val updatedData = hashMapOf(
+            "Familia" to newFamiliaName
+        )
+
+        mFirestore.collection("Familias").document(familia.id)
+            .set(updatedData, SetOptions.merge())
+            .addOnSuccessListener {
+                fetchFamilias() // Refresh the list after update
+                Log.d(ContentValues.TAG, "La familia fue modificada correctamente")
+            }
+            .addOnFailureListener { e ->
+                Log.w(ContentValues.TAG, "Error al modificar", e)
             }
     }
 

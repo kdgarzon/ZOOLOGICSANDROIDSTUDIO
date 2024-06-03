@@ -1,11 +1,12 @@
 package com.dev.zoologicsapp.ui.VistaAdministrador
 
 data class Animal(
-    val Nombre_animal: String = "",
-    val Año: Int = 0,
-    val Continente: String = "",
-    val Especie: String = "",
-    val Pais: String = "",
-    val Sexo: String = "",
-    val Zoo_Pertenece: String = ""
+    var id: String = "",
+    val nombre_animal: String = "",
+    val año: Int = 0,
+    val continente: String = "",
+    val especie: String = "",
+    val pais: String = "",
+    val sexo: String = "",
+    val zoo_Pertenece: String = ""
 )

@@ -132,7 +132,7 @@ class AnimalesAdmViewModel : ViewModel() {
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    val zoo = document.getString("NombreZoo")
+                    val zoo = document.getString("nombrezoo")
                     zoo?.let { zooList.add(it) }
                 }
                 zooList.sort()
@@ -149,7 +149,9 @@ class AnimalesAdmViewModel : ViewModel() {
             .addOnSuccessListener { documents ->
                 val animalList = mutableListOf<Animal>()
                 for (document in documents) {
+                    //val animal = document.toObject(Animal::class.java).copy(id = document.id)
                     val animal = document.toObject(Animal::class.java)
+                    animal.id = document.id
                     animalList.add(animal)
                 }
                 _animales.value = animalList
@@ -161,19 +163,53 @@ class AnimalesAdmViewModel : ViewModel() {
 
     fun crearAnimal(anioCreado: Number, nomCreado: String) {
         val animal = hashMapOf(
-            "Nombre_animal" to nomCreado,
-            "Especie" to selectedEspecie.value,
-            "Continente" to selectedContinente.value,
-            "Año" to anioCreado,
-            "Sexo" to selectedSex.value,
-            "Zoo_Pertenece" to selectedZoo.value,
-            "Pais" to selectedPais.value
+            "nombre_animal" to nomCreado,
+            "especie" to selectedEspecie.value,
+            "continente" to selectedContinente.value,
+            "año" to anioCreado,
+            "sexo" to selectedSex.value,
+            "zoo_Pertenece" to selectedZoo.value,
+            "pais" to selectedPais.value
         )
-        mFirestore.collection("Animales").add(animal).addOnSuccessListener { documentReference ->
-            Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            _animalCreationStatus.value = true
-        }.addOnFailureListener {
-            _animalCreationStatus.value = false
-        }
+        mFirestore.collection("Animales").add(animal)
+            .addOnSuccessListener { documentReference ->
+                val animalId = documentReference.id
+                // Actualizar el animal con el ID del documento
+                val animalConId = Animal(
+                    id = animalId,
+                    nombre_animal = nomCreado,
+                    especie = selectedEspecie.value ?: "",
+                    continente = selectedContinente.value ?: "",
+                    año = anioCreado.toInt(),
+                    sexo = selectedSex.value ?: "",
+                    zoo_Pertenece = selectedZoo.value ?: "",
+                    pais = selectedPais.value ?: ""
+                )
+                // Guardar el animal con el ID actualizado en Firestore
+                mFirestore.collection("Animales").document(animalId)
+                    .set(animalConId)
+                    .addOnSuccessListener {
+                        Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: $animalId")
+                        _animalCreationStatus.value = true
+                    }
+                    .addOnFailureListener {
+                        _animalCreationStatus.value = false
+                    }
+            }
+            .addOnFailureListener {
+                _animalCreationStatus.value = false
+            }
+    }
+
+    fun updateAnimal(animal: Animal) {
+        mFirestore.collection("Animales").document(animal.id)
+            .set(animal)
+            .addOnSuccessListener {
+                fetchAnimales() // Refresh the animal list
+                Log.d("AnimalesAdmViewModel", "Animal actualizado correctamente")
+            }
+            .addOnFailureListener { exception ->
+                Log.e("AnimalesAdmViewModel", "Error al actualizar el animal: $exception")
+            }
     }
 }

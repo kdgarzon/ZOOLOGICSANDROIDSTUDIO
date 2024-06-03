@@ -77,6 +77,7 @@ class ZoologicosAdmViewModel : ViewModel() {
                 val zooList = mutableListOf<Zoologico>()
                 for (document in documents) {
                     val zoologico = document.toObject(Zoologico::class.java)
+                    zoologico.id = document.id
                     zooList.add(zoologico)
                 }
                 _zoologicos.value = zooList
@@ -88,17 +89,49 @@ class ZoologicosAdmViewModel : ViewModel() {
 
     fun crearZoo(tamCreado: Number, nomCreado: String, presupuestoCreado: Number) {
         val zoo = hashMapOf(
-            "NombreZoo" to nomCreado,
-            "TamañoMetrosCuadrados" to tamCreado,
-            "Presupuesto" to presupuestoCreado,
-            "Ciudad" to selectedCiudad.value,
-            "Pais" to selectedPais.value
+            "nombrezoo" to nomCreado,
+            "tamañometroscuadrados" to tamCreado,
+            "presupuesto" to presupuestoCreado,
+            "ciudad" to selectedCiudad.value,
+            "pais" to selectedPais.value
         )
-        mFirestore.collection("Zoologicos").add(zoo).addOnSuccessListener { documentReference ->
-            Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            _zooCreationStatus.value = true
-        }.addOnFailureListener {
-            _zooCreationStatus.value = false
-        }
+
+        mFirestore.collection("Zoologicos").add(zoo)
+            .addOnSuccessListener { documentReference ->
+                val zooId = documentReference.id
+                // Actualizar el zoologico con el ID del documento
+                val zooConId = Zoologico(
+                    id = zooId,
+                    nombrezoo = nomCreado,
+                    tamañometroscuadrados = tamCreado.toInt(),
+                    presupuesto = presupuestoCreado.toInt(),
+                    pais = selectedPais.value ?: "",
+                    ciudad = selectedCiudad.value ?: ""
+                )
+                // Guardar el zoologico con el ID actualizado en Firestore
+                mFirestore.collection("Zoologicos").document(zooId)
+                    .set(zooConId)
+                    .addOnSuccessListener {
+                        Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: $zooId")
+                        _zooCreationStatus.value = true
+                    }
+                    .addOnFailureListener {
+                        _zooCreationStatus.value = false
+                    }
+            }
+            .addOnFailureListener {
+                _zooCreationStatus.value = false
+            }
+    }
+    fun updatedZoologico(zoologico: Zoologico) {
+        mFirestore.collection("Zoologicos").document(zoologico.id)
+            .set(zoologico)
+            .addOnSuccessListener {
+                fetchZoologicos() // Refresh the animal list
+                Log.d("ZoologicosAdmViewModel", "Zoologico actualizado correctamente")
+            }
+            .addOnFailureListener { exception ->
+                Log.e("ZoologicosAdmViewModel", "Error al actualizar el zoologico: $exception")
+            }
     }
 }
